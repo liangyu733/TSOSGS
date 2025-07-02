@@ -1,0 +1,22 @@
+Package: TSOSGS
+Type: package
+Title: Training Set Optimization for Spatial Genomic Selection
+Version: 1.0.0
+Date: 2025-07-02
+Authors@R: c(
+    person("Liang-Yu", "Chen", , "ryanc000@gmail.com", c("aut", "cre")),
+    person("Chen-Tuo", "Liao", , "ctliao@ntu.edu.tw", c("aut", "ths"), 
+    comment = c(ORCID = "0000-0001-9777-3701")) )
+Description: This package implements training set optimization for spatial 
+    genomic selection using a genetic algorithm under the GBLUP model. 
+    It includes both a Two-Stage and One-Stage Genetic Search algorithm, 
+    with support for spatial correlation in the selection process.
+Depends: R (>= 4.5.1), sommer (>= 4.4.1), MASS, stats, parallel
+Imports: compiler
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+LazyData: TRUE
+
+
