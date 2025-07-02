@@ -29,7 +29,7 @@ GEBV <- function(Kb, train, yt, R0 = NULL, nIters = 5000, tolParInv = 10^-4, met
   Kt <- Kb[train, train]
   if(method == "BGS") {
     fit <- BGS(yt, Kt, R0, nIters = nIters, tolParInv = tolParInv)
-    gthat <- apply(fit[[1]], 3, function(x) mean(x[-seq(nIters*0.9)]))
+    gthat <- apply(fit[[1]], 1, function(x) mean(x[-seq(nIters*0.9)]))
     muhat <- mean(fit[[2]][-seq(nIters*0.9)])
     gebv <- muhat + Kb[, train] %*% INV(Kt, tolParInv) %*% gthat
   }
@@ -42,5 +42,7 @@ GEBV <- function(Kb, train, yt, R0 = NULL, nIters = 5000, tolParInv = 10^-4, met
                         tolParInv = tolParInv)
     gebv <- fit$fitted[1] + Kb[, train0] %*% INV(Kb[train0, train0], tolParInv) %*% fit$u
   }
-  return(gebv)
+  out <- drop(gebv)
+  names(out) <- rownames(gebv)
+  return(out)
 }

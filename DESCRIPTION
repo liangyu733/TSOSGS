@@ -1,7 +1,7 @@
 Package: TSOSGS
 Type: package
 Title: Training Set Optimization for Spatial Genomic Selection
-Version: 1.0.0
+Version: 1.0.1
 Date: 2025-07-02
 Authors@R: c(
     person("Liang-Yu", "Chen", , "ryanc000@gmail.com", c("aut", "cre")),

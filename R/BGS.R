@@ -57,10 +57,10 @@ BGS <- function(yt, Kt, R0 = NULL, mu.ini = NULL, ga.ini = 0, vE.ini = 1, vA.ini
   g1 <- rep(mu.ini, n_fix)
   g2 <- rep(ga.ini, n)
 
-  ga_dat <- matrix(NA, n, iter)
-  mu_dat <- rep(NA, iter)
-  vA_dat <- rep(NA, iter)
-  vE_dat <- rep(NA, iter)
+  ga_dat <- matrix(NA, n, nIters)
+  mu_dat <- rep(NA, nIters)
+  vA_dat <- rep(NA, nIters)
+  vE_dat <- rep(NA, nIters)
 
   for (i in 0:nIters) {
     C11inv <- INV(C11, tolParInv)
